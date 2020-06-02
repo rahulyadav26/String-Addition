@@ -41,7 +41,9 @@ public class StringAdditionTest {
     public void testSomeMethod() {
         StringAddition add = new StringAddition();
         int res = add.sum("");
-        assertEquals(0,res);
+        assertEquals(0,res); //empty string
+        res = add.sum("1");
+        assertEquals(1,res); //single number
     }
     
 }

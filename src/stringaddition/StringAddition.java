@@ -14,6 +14,8 @@ public class StringAddition {
         if(str.isEmpty()){
             return 0;
         }
-        return 1;
+        else{
+            return Integer.parseInt(str);
+        }
     }
 }
