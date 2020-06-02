@@ -5,6 +5,8 @@
  */
 package stringaddition;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author dell
@@ -16,18 +18,37 @@ public class StringAddition {
         }
         else{
             int sum=0;
+            ArrayList<Integer> list = new ArrayList<>();
             for(int i=0;i<str.length();i++){
                 String num="";
-                while(i<str.length() && Character.isDigit(str.charAt(i))){
-                    num+=str.charAt(i);
-                    i++;
+                boolean negative = false;
+                if(Character.isDigit(str.charAt(i)) && i>0 && str.charAt(i-1)=='-'){
+                    negative = true;
+                    while(i<str.length() && Character.isDigit(str.charAt(i))){
+                        num+=str.charAt(i);
+                        i++;
+                    }
+                }
+                else{
+                    while(i<str.length() && Character.isDigit(str.charAt(i))){
+                        num+=str.charAt(i);
+                        i++;
+                    }
                 }
                 
-                if(!num.isEmpty() && Integer.parseInt(num)<=1000){
+                if(!num.isEmpty() && Integer.parseInt(num)<=1000 && !negative){
                     sum+=Integer.parseInt(num);
                 }
+                else if(!num.isEmpty() && negative){
+                    list.add(Integer.parseInt(num)*-1);
+                }
             }
-            return sum;
+            if(list.size()==0){
+                return sum;
+            }
+            System.out.println("i was here");
+            throw new RuntimeException("Negative numbers not allowed: " + list.toString());
         }
     }
+    
 }

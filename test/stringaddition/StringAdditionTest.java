@@ -60,6 +60,17 @@ public class StringAdditionTest {
         assertEquals(124,res); //using combination of delimiters and more than two numbers 
         res = add.sum("1\n1000;:10052//1241\n\n5");
         assertEquals(1006,res); //numbers greater than 1000 should be ignored
+        RuntimeException exc = null;
+        try{
+            res = add.sum("-1\n6,8 -13"); //negative numbers not allowed
+        }
+        catch(RuntimeException e){
+            System.out.println("exception is " + e);
+            exc = e;
+        }
+        String s = "Negative numbers not allowed: [-1, -13]";
+        assertEquals(s,exc.getMessage());    
+        
     }
     
 }
