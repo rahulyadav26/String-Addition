@@ -50,6 +50,10 @@ public class StringAdditionTest {
         assertEquals(3,res); //sum of numbers separated by space
         res = add.sum("1,5,8 0,7");
         assertEquals(21,res); //sum of multiple numbers separated by space and commas
+        res = add.sum("10,21");
+        assertEquals(31,res);//sum of numbers greater than 10
+        res = add.sum("1, 3  5,101 438, 34");
+        assertEquals(582,res); //sum of numbers greater than or equal to zero
     }
     
 }

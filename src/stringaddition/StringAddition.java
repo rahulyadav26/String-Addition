@@ -17,8 +17,14 @@ public class StringAddition {
         else{
             int sum=0;
             for(int i=0;i<str.length();i++){
-                if(Character.isDigit(str.charAt(i))){
-                    sum+=Integer.parseInt(String.valueOf(str.charAt(i)));
+                String num="";
+                while(i<str.length() && Character.isDigit(str.charAt(i))){
+                    num+=str.charAt(i);
+                    i++;
+                }
+                
+                if(!num.isEmpty()){
+                    sum+=Integer.parseInt(num);
                 }
             }
             return sum;
