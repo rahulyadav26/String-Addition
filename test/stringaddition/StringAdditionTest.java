@@ -44,6 +44,8 @@ public class StringAdditionTest {
         assertEquals(0,res); //empty string
         res = add.sum("1");
         assertEquals(1,res); //single number
+        res = add.sum("1,2");
+        assertEquals(3,res); //sum of two numbers
     }
     
 }
