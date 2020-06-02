@@ -56,6 +56,8 @@ public class StringAdditionTest {
         assertEquals(582,res); //sum of numbers greater than or equal to zero
         res = add.sum("://23;\n100");
         assertEquals(123,res); //using combination of delimiters 
+        res = add.sum(":1//23;\n100");
+        assertEquals(124,res); //using combination of delimiters and more than two numbers 
     }
     
 }
