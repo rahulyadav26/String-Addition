@@ -24,16 +24,12 @@ public class StringAddition {
                 boolean negative = false;
                 if(Character.isDigit(str.charAt(i)) && i>0 && str.charAt(i-1)=='-'){
                     negative = true;
-                    while(i<str.length() && Character.isDigit(str.charAt(i))){
-                        num+=str.charAt(i);
-                        i++;
-                    }
+                    
                 }
-                else{
-                    while(i<str.length() && Character.isDigit(str.charAt(i))){
-                        num+=str.charAt(i);
-                        i++;
-                    }
+                
+                while(i<str.length() && Character.isDigit(str.charAt(i))){
+                    num+=str.charAt(i);
+                    i++;
                 }
                 
                 if(!num.isEmpty() && Integer.parseInt(num)<=1000 && !negative){
