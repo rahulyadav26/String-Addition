@@ -65,11 +65,14 @@ public class StringAdditionTest {
             res = add.sum("-1\n6,8 -13"); //negative numbers not allowed
         }
         catch(RuntimeException e){
-            System.out.println("exception is " + e);
             exc = e;
         }
         String s = "Negative numbers not allowed: [-1, -13]";
         assertEquals(s,exc.getMessage());    
+        res = add.sum("//[--]4\\10;;");
+        assertEquals(14,res);//delimiters of any length
+        res = add.sum("//[--]4--[****]10;;");
+        assertEquals(14,res);//multiple delimiters of any length
         
     }
     

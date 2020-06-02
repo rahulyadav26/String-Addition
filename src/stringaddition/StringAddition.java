@@ -42,7 +42,6 @@ public class StringAddition {
             if(list.size()==0){
                 return sum;
             }
-            System.out.println("i was here");
             throw new RuntimeException("Negative numbers not allowed: " + list.toString());
         }
     }
