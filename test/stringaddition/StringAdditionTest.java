@@ -59,7 +59,7 @@ public class StringAdditionTest {
         res = add.sum(":1//23;\n100");
         assertEquals(124,res); //using combination of delimiters and more than two numbers 
         res = add.sum("1\n1000;:10052//1241\n\n5");
-        assertEquals(1006,res);
+        assertEquals(1006,res); //numbers greater than 1000 should be ignored
     }
     
 }
