@@ -48,6 +48,8 @@ public class StringAdditionTest {
         assertEquals(3,res); //sum of two numbers
         res = add.sum("1 2");
         assertEquals(3,res); //sum of numbers separated by space
+        res = add.sum("1,5,8 0,7");
+        assertEquals(21,res); //sum of multiple numbers separated by space and commas
     }
     
 }
