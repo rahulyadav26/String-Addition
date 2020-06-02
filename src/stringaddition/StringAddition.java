@@ -23,7 +23,7 @@ public class StringAddition {
                     i++;
                 }
                 
-                if(!num.isEmpty()){
+                if(!num.isEmpty() && Integer.parseInt(num)<=1000){
                     sum+=Integer.parseInt(num);
                 }
             }
