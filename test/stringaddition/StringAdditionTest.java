@@ -54,6 +54,8 @@ public class StringAdditionTest {
         assertEquals(31,res);//sum of numbers greater than 10
         res = add.sum("1, 3  5,101 438, 34");
         assertEquals(582,res); //sum of numbers greater than or equal to zero
+        res = add.sum("://23;\n100");
+        assertEquals(123,res); //using combination of delimiters 
     }
     
 }
